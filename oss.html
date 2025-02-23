@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>One Stop Shop</title>
+  <link rel="stylesheet" href="oss.css" />
+  <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon"/>
+</head>
+<body>
+  <header>
+    <h1><a href="oss.html">Grupo PRIMO | One Stop Shop</a></h1>
+    <div class="header-links">
+      <p>
+        <a href="https://timeprimo.sharepoint.com/:f:/r/sites/SprintCS/Documentos%20Compartilhados/Vendas?csf=1&web=1&e=Fmb7Pt">Sales Hub</a>
+        <span class="extra-text">
+          <a href="https://forms.gle/4Bx17hA7JQ3MCpUt9">Requisições</a>
+        </span>
+      </p> 
+    </div>
+  </header>
+
+  <!-- Seção de Filtros -->
+  <main>
+    <section class="filters">
+      <!-- Cada label + select em um "filter-item" -->
+      <div class="filter-item">
+        <label for="group-filter">Quero</label>
+        <select id="group-filter">
+          <option value="all"></option>
+          <option value="aprender">Aprender</option>
+          <option value="investir">Investir</option>
+        </select>
+      </div>  
+
+      <div class="filter-item">
+        <label for="price-filter">Posso pagar por mês até</label>
+        <select id="price-filter">
+          <option value="all"></option>
+          <option value="200">R$ 200</option>
+          <option value="400">R$ 400</option>
+          <option value="1100">R$ 1.100</option>
+        </select>
+      </div>
+
+      <div class="filter-item">
+        <label for="custom-trail-filter">Quero trilhar minha própria rota</label>
+        <select id="custom-trail-filter">
+          <option value="all"></option>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
+      </div>
+
+      <div class="filter-item">
+        <label for="finance-career-filter">Quero trabalhar no mercado financeiro</label>
+        <select id="finance-career-filter">
+          <option value="all"></option>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
+      </div>
+
+      <div class="filter-item">
+        <label for="degree-filter">Sou graduado</label>
+        <select id="degree-filter">
+          <option value="all"></option>
+          <option value="sim" selected>Sim</option>
+          <option value="nao">Não</option>
+        </select>
+      </div>
+
+      <div class="filter-item">
+        <label for="company-filter">Sou empresário</label>
+        <select id="company-filter">
+          <option value="all"></option>
+          <option value="sim">Sim</option>
+          <option value="nao" selected>Não</option>
+        </select>
+      </div>
+
+      <!-- Novo filtro "primo-filter" -->
+      <div class="filter-item">
+        <label for="primo-filter">Sou um Primo</label>
+        <select id="primo-filter">
+          <option value="nao" selected>Não</option>
+          <option value="hub">Aluno Faculdade HUB</option>
+          <option value="vr">Aluno Viver de Renda</option>
+          <option value="finclass">Assinante Finclass</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Lista de produtos -->
+    <div class="product-grid" id="product-list">
+      <!-- Produto 2 -->
+      <a href="https://sl.finclass.com/fce0002-formacao-consultor-elite/convite/"
+         target="_blank"
+         class="product"
+         data-group="aprender"
+         data-price="1100"
+         data-custom-trail="nao"
+         data-finance-career="sim"
+         data-degree="sim nao all"
+         data-company="sim nao all"
+         data-primo="hub-vr"
+         data-benefit-hub="20%"
+         data-benefit-vr="R$ 2.000"
+         data-benefit-finclass=""
+         data-preco="R$ 8.997 ou 12x de R$ 823,84">
+        <img src="images/ConsultorElite.png" alt="Consultor de Elite">
+        <span class="benefit-text"></span>
+        <span class="price-text"></span>
+      </a>
+
+      <!-- Produto 3 -->
+      <a href="https://dinheirama.com/"
+         target="_blank"
+         class="product"
+         data-group="aprender"
+         data-price="200-400-1100"
+         data-custom-trail="sim nao all"
+         data-finance-career="sim nao all"
+         data-degree="sim nao all"
+         data-company="sim nao all"
+         data-primo="nao"
+         data-preco="">
+        <img src="images/Dinheirama.png" alt="Dinheirama">
+        <span class="benefit-text"></span>
+        <span class="price-text"></span>
+      </a>
+
+      <!-- Produto 4 -->
+      <a href="https://imersoes.equitymais.com/negocios/"
+         target="_blank"
+         class="product"
+         data-group="aprender"
+         data-price="200-400-1100"
+         data-custom-trail="nao"
+         data-finance-career="nao"
+         data-company="sim"
+         data-degree="sim nao all"
+         data-primo="nao"
+         data-preco="">
+        <img src="images/Equity-Mais.png" alt="Equity+">
+        <span class="benefit-text"></span>
+        <span class="price-text"></span>
+      </a>
+
+      <!-- Produto 5 -->
+      <a href="https://www.finclass.com/"
+         target="_blank"
+         class="product"
+         data-group="aprender"
+         data-price="200-400-1100"
+         data-custom-trail="sim"
+         data-finance-career="nao all"
+         data-degree="sim nao all"
+         data-company="sim nao all"
+         data-primo="hub"
+         data-benefit-hub="10%"
+         data-benefit-vr="8%"
+         data-benefit-finclass="5%"
+         data-preco="R$ 838,80/ano ou 12x de R$ 69,90">
+        <img src="images/Finclass.png" alt="Finclass">
+        <span class="benefit-text"></span>
+        <span class="price-text"></span>
+      </a>
+
+      <!-- Produto 6 -->
+      <a href="https://pv.oprimorico.com.br/fpf0002/index/"
+         target="_blank"
+         class="product"
+         data-group="aprender"
+         data-price="1100"
+         data-custom-trail="nao"
+         data-finance-career="sim"
+         data-degree="sim nao all"
+         data-company="sim nao all"
+         data-primo="hub"
+         data-benefit-hub="20%"
+         data-benefit-vr="18%"
+         data-benefit-finclass="15%"
+         data-preco="R$ 4.997 ou 12x de 497">
+        <img src="images/FPF.png" alt="Formação de Planejador Financeiro">
+        <span class="benefit-text"></span>
+        <span class="price-text"></span>
+      </a>
+
+      <!-- Produto 7 -->
+      <a href="https://pc.faculdadehub.com.br/graduacao-adm/adm0002"
+         target="_blank"
+         class="product"
+         data-group="aprender"
+         data-price="1100"
+         data-custom-trail="nao"
+         data-finance-career="sim nao"
+         data-degree="nao"
+         data-company="sim nao all"
+         data-primo="nao"
+         data-benefit-hub="10%"
+         data-benefit-vr="8%"
+         data-benefit-finclass="5%"
+         data-preco="Vest: R$ 100 e Grad: R$ 799 ou R$ 1099/mês">
+        <img src="images/Faculdade-HUB.png" alt="Graduação HUB">
+        <span class="benefit-text"></span>
+        <span class="price-text"></span>
+      </a>
+
+      <!-- Produto 8 -->
+      <a href="https://faculdadehub.com.br/mba.html"
+         target="_blank"
+         class="product"
+         data-group="aprender"
+         data-price="1100"
+         data-custom-trail="nao"
+         data-finance-career="sim"
+         data-degree="sim nao all"
+         data-company="sim nao all"
+         data-primo="nao"
+         data-benefit-hub="10%"
+         data-benefit-vr="8%"
+         data-benefit-finclass="5%"
+         data-preco="Em média R$ 999/mês">
+        <img src="images/MBA-HUB.png" alt="MBA HUB">
+        <span class="benefit-text"></span>
+        <span class="price-text"></span>
+      </a>
+
+      <!-- Produto 9 -->
+      <a href="https://www.grao.com.br/"
+         target="_blank"
+         class="product"
+         data-group="investir"
+         data-price="200-400-1100"
+         data-custom-trail="sim"
+         data-finance-career="nao"
+         data-degree="sim nao all"
+         data-company="sim nao all"
+         data-primo="hub"
+         data-benefit-hub="1ª reunião grátis"
+         data-benefit-vr="Oferta especial"
+         data-benefit-finclass="Desconto exclusivo"
+         data-preco="">
+        <img src="images/Grao.png" alt="Grão">
+        <span class="benefit-text"></span>
+        <span class="price-text"></span>
+      </a>
+
+      <!-- Produto 10 -->
+      <a href="https://pv.oprimorico.com.br/dmmp0001/index"
+         target="_blank"
+         class="product"
+         data-group="aprender investir"
+         data-price="200-400-1100"
+         data-custom-trail="nao"
+         data-finance-career="nao"
+         data-degree="sim nao all"
+         data-company="sim nao all"
+         data-primo="hub-finclass"
+         data-benefit-hub="10%"
+         data-benefit-vr="18%"
+         data-benefit-finclass="R$ 200"
+         data-preco="R$ 1.997 ou 12x de R$ 197">
+        <img src="images/Personal.png" alt="Personal Financeiro">
+        <span class="benefit-text"></span>
+        <span class="price-text"></span>
+      </a>
+
+      <!-- Produto 11 -->
+      <a href="https://portfel.com.br/"
+         target="_blank"
+         class="product"
+         data-group="investir"
+         data-price="400-1100"
+         data-custom-trail="nao"
+         data-finance-career="nao all"
+         data-degree="sim nao all"
+         data-company="sim nao all"
+         data-primo="nao"
+         data-benefit-hub="10%"
+         data-benefit-vr="8%"
+         data-benefit-finclass="5%"
+         data-preco="">
+        <img src="images/Portfel.png" alt="Portfel">
+        <span class="benefit-text"></span>
+        <span class="price-text"></span>
+      </a>
+
+      <!-- Produto 12 -->
+      <a href="https://www.topinvest.com.br/"
+         target="_blank"
+         class="product"
+         data-group="aprender"
+         data-price="200-400-1100"
+         data-custom-trail="sim"
+         data-finance-career="sim"
+         data-degree="sim nao all"
+         data-company="sim nao all"
+         data-primo="hub"
+         data-benefit-hub="10%"
+         data-benefit-vr="8%"
+         data-benefit-finclass="5%"
+         data-preco="">
+        <img src="images/TopInvest.png" alt="TopInvest">
+        <span class="benefit-text"></span>
+        <span class="price-text"></span>
+      </a>
+
+      <!-- Produto 13 -->
+      <a href="https://www.underblock.com.br/produto/underclub/"
+         target="_blank"
+         class="product"
+         data-group="aprender"
+         data-price="200-400-1100"
+         data-custom-trail="nao"
+         data-finance-career="nao"
+         data-degree="sim nao all"
+         data-company="sim nao all"
+         data-primo="nao"
+         data-benefit-hub="15%"
+         data-benefit-vr="R$ 1.000"
+         data-benefit-finclass=""
+         data-preco="R$ 2.200 ou 12x de 214,50">
+        <img src="images/Underblock.png" alt="Underclub">
+        <span class="benefit-text"></span>
+        <span class="price-text"></span>
+      </a>
+
+      <!-- Produto 14 -->
+      <a href="https://pc.cursoviverderenda.com/vr0029/espera/"
+         target="_blank"
+         class="product"
+         data-group="aprender"
+         data-price="400-1100"
+         data-custom-trail="nao"
+         data-finance-career="nao"
+         data-degree="sim nao all"
+         data-company="sim nao all"
+         data-primo="vr-hub"
+         data-benefit-hub="15%"
+         data-benefit-vr="R$ 1.000"
+         data-benefit-finclass=""
+         data-preco="R$ 3.197 ou 12x de R$ 291,42">
+        <img src="images/Viverderenda.png" alt="Viver de Renda">
+        <span class="benefit-text"></span>
+        <span class="price-text"></span>
+      </a>
+
+      <!-- Produto 15 -->
+      <a href="https://pc.cursoviverderenda.com/vrc0007/index/"
+         target="_blank"
+         class="product"
+         data-group="aprender"
+         data-price="400-1100"
+         data-custom-trail="nao"
+         data-finance-career="nao"
+         data-degree="sim nao all"
+         data-company="sim nao all"
+         data-primo="vr-hub"
+         data-benefit-hub="10%"
+         data-benefit-vr="R$ 1.000"
+         data-benefit-finclass=""
+         data-preco="R$ 2.997 ou 12x de R$ 274,75">
+        <img src="images/VRCripto.png" alt="Viver de Renda Cripto">
+        <span class="benefit-text"></span>
+        <span class="price-text"></span>
+      </a>
+
+      <!-- Produto 16 -->
+      <a href="https://www.vrexterior.com.br/vre0007/espera/"
+         target="_blank"
+         class="product"
+         data-group="aprender"
+         data-price="400-1100"
+         data-custom-trail="nao"
+         data-finance-career="nao"
+         data-degree="sim nao all"
+         data-company="sim nao all"
+         data-primo="vr"
+         data-benefit-hub="R$ 1.000"
+         data-benefit-vr="R$ 1.000"
+         data-benefit-finclass="R$ 850"
+         data-preco="R$ 2.997 ou 12x de R$ 274,75">
+        <img src="images/VRExterior.png" alt="Viver de Renda no Exterior">
+        <span class="benefit-text"></span>
+        <span class="price-text"></span>
+      </a>
+    </div>
+  </main>
+
+  <div class="spacer"></div>
+  
+  <footer>
+    <p>&copy; <a href="https://www.grupo-primo.com" target="_blank" rel="noopener noreferrer">Grupo PRIMO, todos os direitos reservados.</a></p>
+  </footer>
+
+  <!-- Script de Filtragem -->
+  <script>
+    // Seleciona os filtros
+    const groupFilter = document.getElementById('group-filter');
+    const priceFilter = document.getElementById('price-filter');
+    const customTrailFilter = document.getElementById('custom-trail-filter');
+    const financeCareerFilter = document.getElementById('finance-career-filter');
+    const degreeFilter = document.getElementById('degree-filter');
+    const companyFilter = document.getElementById('company-filter');
+    const primoFilter = document.getElementById('primo-filter');
+
+    // Todos os produtos são .product dentro de #product-list
+    const allProducts = Array.from(document.querySelectorAll('#product-list .product'));
+
+    function updateProductList() {
+      const selectedGroup = groupFilter.value;
+      const selectedPrice = priceFilter.value;
+      const selectedCustomTrail = customTrailFilter.value;
+      const selectedFinanceCareer = financeCareerFilter.value;
+      const selectedDegree = degreeFilter.value;
+      const selectedCompany = companyFilter.value;
+      const selectedPrimo = primoFilter.value;
+
+      let filteredProducts = allProducts;
+
+      // Filtro por grupo
+      if (selectedGroup !== 'all') {
+        filteredProducts = filteredProducts.filter(product =>
+          product.getAttribute('data-group')?.split(' ').includes(selectedGroup)
+        );
+      }
+
+      // Filtro por preço
+      if (selectedPrice !== 'all') {
+        filteredProducts = filteredProducts.filter(product =>
+          product.getAttribute('data-price')?.split('-').includes(selectedPrice)
+        );
+      }
+
+      // Filtro por trilha personalizada
+      if (selectedCustomTrail !== 'all') {
+        filteredProducts = filteredProducts.filter(product =>
+          product.getAttribute('data-custom-trail')?.split(' ').includes(selectedCustomTrail)
+        );
+      }
+
+      // Filtro por carreira financeira
+      if (selectedFinanceCareer !== 'all') {
+        filteredProducts = filteredProducts.filter(product =>
+          product.getAttribute('data-finance-career')?.split(' ').includes(selectedFinanceCareer)
+        );
+      }
+
+      // Filtro por graduação
+      if (selectedDegree !== 'all') {
+        filteredProducts = filteredProducts.filter(product => {
+          const degreeData = product.getAttribute('data-degree');
+          return degreeData && degreeData.split(' ').includes(selectedDegree);
+        });
+      }
+
+      // Filtro por empresário
+      if (selectedCompany !== 'all') {
+        filteredProducts = filteredProducts.filter(product => {
+          const companyData = product.getAttribute('data-company');
+          return companyData && companyData.split(' ').includes(selectedCompany);
+        });
+      }
+
+      // Exibe ou esconde (mostra ou esconde os produtos)
+      allProducts.forEach(product => {
+        product.style.display = filteredProducts.includes(product) ? 'flex' : 'none';
+      });
+
+      // Destaca produtos e atualiza "benefit-text" e "price-text" conforme o filtro "primo-filter"
+      filteredProducts.forEach(product => {
+        const primoValues = product.getAttribute('data-primo').split('-');
+        const hasPrimoSelected = primoValues.includes(selectedPrimo);
+        const benefitSpan = product.querySelector('.benefit-text');
+        let benefitText = '';
+        if (selectedPrimo !== 'nao' && hasPrimoSelected) {
+          // Tenta obter a versão específica do benefit para o tipo selecionado
+          benefitText = product.getAttribute('data-benefit-' + selectedPrimo) || product.getAttribute('data-benefit') || '';
+          product.style.backgroundColor = "#ff6600";
+          benefitSpan.textContent = benefitText;
+          benefitSpan.style.display = "block";
+        } else {
+          product.style.backgroundColor = "#fff";
+          benefitSpan.textContent = "";
+          benefitSpan.style.display = "none";
+        }
+
+        // Exibe o ícone de preço se data-preco estiver preenchido
+        const preco = product.getAttribute('data-preco') || '';
+        const priceSpan = product.querySelector('.price-text');
+        if (preco) {
+          priceSpan.textContent = "ⓘ";
+          priceSpan.style.display = "block";
+          priceSpan.title = preco;
+        } else {
+          priceSpan.textContent = "";
+          priceSpan.style.display = "none";
+          priceSpan.removeAttribute('title');
+        }
+      });
+    }
+
+    // Listeners de mudança
+    groupFilter.addEventListener('change', updateProductList);
+    priceFilter.addEventListener('change', updateProductList);
+    customTrailFilter.addEventListener('change', updateProductList);
+    financeCareerFilter.addEventListener('change', updateProductList);
+    degreeFilter.addEventListener('change', updateProductList);
+    companyFilter.addEventListener('change', updateProductList);
+    primoFilter.addEventListener('change', updateProductList);
+
+    // Inicializa a exibição
+    updateProductList();
+  </script>
+</body>
+</html>
