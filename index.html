@@ -3,36 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>One Stop Shop</title>
+  <title>Sales Hub</title>
   <link rel="stylesheet" href="oss.css" />
   <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon"/>
 </head>
 <body>
   <header>
-    <h1><a href="index.html">Grupo PRIMO | One Stop Shop</a></h1>
+    <!-- Área de marca com logo e texto lado a lado -->
+    <a href="index.html" class="header-brand">
+      <img src="images/logo.png" alt="Grupo PRIMO | One Stop Shop" class="header-logo">
+      <h1>Sales Hub</h1>
+    </a>
     <div class="header-links">
-      <p>
-        <a href="https://timeprimo.sharepoint.com/:f:/r/sites/SprintCS/Documentos%20Compartilhados/Vendas?csf=1&web=1&e=Fmb7Pt">Sales Hub</a>
-        <span class="extra-text">
-          <a href="https://forms.gle/4Bx17hA7JQ3MCpUt9">Requisições</a>
-        </span>
-      </p> 
+      <a href="https://timeprimo.sharepoint.com/:f:/r/sites/SprintCS/Documentos%20Compartilhados/Vendas?csf=1&web=1&e=Fmb7Pt">Sales Cloud &nbsp </a>
+      <a href="https://forms.gle/4Bx17hA7JQ3MCpUt9">Requisições</a>
+      <button id="toggle-layout" title="Alternar Layout">⟲</button>
     </div>
   </header>
 
-  <!-- Seção de Filtros -->
-  <main>
-    <section class="filters">
-      <!-- Cada label + select em um "filter-item" -->
+  <!-- Container principal para filtros e produtos -->
+  <main class="main-container layout-horizontal">
+    <!-- Seção de Filtros -->
+    <section class="filters filters-horizontal">
       <div class="filter-item">
-        <label for="group-filter">Quero</label>
+        <label for="group-filter">Tenho interesse em</label>
         <select id="group-filter">
           <option value="all"></option>
           <option value="aprender">Aprender</option>
           <option value="investir">Investir</option>
         </select>
-      </div>  
-
+      </div>
       <div class="filter-item">
         <label for="price-filter">Posso pagar por mês até</label>
         <select id="price-filter">
@@ -42,7 +42,6 @@
           <option value="1100">R$ 1.100</option>
         </select>
       </div>
-
       <div class="filter-item">
         <label for="custom-trail-filter">Quero trilhar minha própria rota</label>
         <select id="custom-trail-filter">
@@ -51,7 +50,6 @@
           <option value="nao">Não</option>
         </select>
       </div>
-
       <div class="filter-item">
         <label for="finance-career-filter">Quero trabalhar no mercado financeiro</label>
         <select id="finance-career-filter">
@@ -60,7 +58,6 @@
           <option value="nao">Não</option>
         </select>
       </div>
-
       <div class="filter-item">
         <label for="degree-filter">Sou graduado</label>
         <select id="degree-filter">
@@ -69,7 +66,6 @@
           <option value="nao">Não</option>
         </select>
       </div>
-
       <div class="filter-item">
         <label for="company-filter">Sou empresário</label>
         <select id="company-filter">
@@ -78,8 +74,6 @@
           <option value="nao" selected>Não</option>
         </select>
       </div>
-
-      <!-- Novo filtro "primo-filter" -->
       <div class="filter-item">
         <label for="primo-filter">Sou um Primo</label>
         <select id="primo-filter">
@@ -95,7 +89,7 @@
 
     <!-- Lista de produtos -->
     <div class="product-grid" id="product-list">
-      <!-- Produto 2 -->
+      <!-- Exemplo de Produto 2 -->
       <a href="https://sl.finclass.com/fce0002-formacao-consultor-elite/convite/"
          target="_blank"
          class="product"
@@ -200,9 +194,6 @@
          data-degree="nao"
          data-company="sim nao all"
          data-primo="nao"
-         data-benefit-hub=""
-         data-benefit-vr=""
-         data-benefit-finclass=""
          data-preco="Vest: R$ 100 e Grad: R$ 799 ou R$ 1099/mês">
         <img src="images/Faculdade-HUB.png" alt="Graduação HUB">
         <span class="benefit-text"></span>
@@ -220,9 +211,6 @@
          data-degree="sim nao all"
          data-company="sim nao all"
          data-primo="nao"
-         data-benefit-hub=""
-         data-benefit-vr=""
-         data-benefit-finclass=""
          data-preco="Em média R$ 999/mês">
         <img src="images/MBA-HUB.png" alt="MBA HUB">
         <span class="benefit-text"></span>
@@ -280,9 +268,6 @@
          data-degree="sim nao all"
          data-company="sim nao all"
          data-primo="nao"
-         data-benefit-hub=""
-         data-benefit-vr=""
-         data-benefit-finclass=""
          data-preco="">
         <img src="images/Portfel.png" alt="Portfel">
         <span class="benefit-text"></span>
@@ -339,7 +324,7 @@
          data-finance-career="nao"
          data-degree="sim nao all"
          data-company="sim nao all"
-         data-primo="vr-vrc-vre-hub"
+         data-primo="vr-hub"
          data-benefit-hub="15%"
          data-benefit-vr="R$ 1.500"
          data-benefit-vrc="R$ 1.000"
@@ -361,8 +346,8 @@
          data-finance-career="nao"
          data-degree="sim nao all"
          data-company="sim nao all"
-         data-primo="vr-vrc-vre-hub"
-         data-benefit-hub="10%"
+         data-primo="vr-hub"
+         data-benefit-hub="R$ 1.000"
          data-benefit-vr="R$ 1.000"
          data-benefit-vrc="R$ 1.500"
          data-benefit-vre="R$ 1.000"
@@ -384,7 +369,7 @@
          data-degree="sim nao all"
          data-company="sim nao all"
          data-primo="vr-vrc-vre"
-         data-benefit-hub="10%"
+         data-benefit-hub="R$ 1.000"
          data-benefit-vr="R$ 1.000"
          data-benefit-vrc="R$ 1.000"
          data-benefit-vre="R$ 1.500"
@@ -403,9 +388,8 @@
     <p>&copy; <a href="https://www.grupo-primo.com" target="_blank" rel="noopener noreferrer">Grupo PRIMO, todos os direitos reservados.</a></p>
   </footer>
 
-  <!-- Script de Filtragem -->
+  <!-- Script de Filtragem e Toggling de Layout -->
   <script>
-    // Seleciona os filtros
     const groupFilter = document.getElementById('group-filter');
     const priceFilter = document.getElementById('price-filter');
     const customTrailFilter = document.getElementById('custom-trail-filter');
@@ -413,10 +397,27 @@
     const degreeFilter = document.getElementById('degree-filter');
     const companyFilter = document.getElementById('company-filter');
     const primoFilter = document.getElementById('primo-filter');
-
-    // Todos os produtos são .product dentro de #product-list
+  
+    const toggleButton = document.getElementById('toggle-layout');
+    const mainContainer = document.querySelector('.main-container');
+    const filtersSection = document.querySelector('.filters');
+  
     const allProducts = Array.from(document.querySelectorAll('#product-list .product'));
-
+  
+    toggleButton.addEventListener('click', () => {
+      if(mainContainer.classList.contains('layout-horizontal')){
+        mainContainer.classList.remove('layout-horizontal');
+        mainContainer.classList.add('layout-vertical');
+        filtersSection.classList.remove('filters-horizontal');
+        filtersSection.classList.add('filters-vertical');
+      } else {
+        mainContainer.classList.remove('layout-vertical');
+        mainContainer.classList.add('layout-horizontal');
+        filtersSection.classList.remove('filters-vertical');
+        filtersSection.classList.add('filters-horizontal');
+      }
+    });
+  
     function updateProductList() {
       const selectedGroup = groupFilter.value;
       const selectedPrice = priceFilter.value;
@@ -425,66 +426,57 @@
       const selectedDegree = degreeFilter.value;
       const selectedCompany = companyFilter.value;
       const selectedPrimo = primoFilter.value;
-
+  
       let filteredProducts = allProducts;
-
-      // Filtro por grupo
-      if (selectedGroup !== 'all') {
+  
+      if(selectedGroup !== 'all'){
         filteredProducts = filteredProducts.filter(product =>
           product.getAttribute('data-group')?.split(' ').includes(selectedGroup)
         );
       }
-
-      // Filtro por preço
-      if (selectedPrice !== 'all') {
+  
+      if(selectedPrice !== 'all'){
         filteredProducts = filteredProducts.filter(product =>
           product.getAttribute('data-price')?.split('-').includes(selectedPrice)
         );
       }
-
-      // Filtro por trilha personalizada
-      if (selectedCustomTrail !== 'all') {
+  
+      if(selectedCustomTrail !== 'all'){
         filteredProducts = filteredProducts.filter(product =>
           product.getAttribute('data-custom-trail')?.split(' ').includes(selectedCustomTrail)
         );
       }
-
-      // Filtro por carreira financeira
-      if (selectedFinanceCareer !== 'all') {
+  
+      if(selectedFinanceCareer !== 'all'){
         filteredProducts = filteredProducts.filter(product =>
           product.getAttribute('data-finance-career')?.split(' ').includes(selectedFinanceCareer)
         );
       }
-
-      // Filtro por graduação
-      if (selectedDegree !== 'all') {
+  
+      if(selectedDegree !== 'all'){
         filteredProducts = filteredProducts.filter(product => {
           const degreeData = product.getAttribute('data-degree');
           return degreeData && degreeData.split(' ').includes(selectedDegree);
         });
       }
-
-      // Filtro por empresário
-      if (selectedCompany !== 'all') {
+  
+      if(selectedCompany !== 'all'){
         filteredProducts = filteredProducts.filter(product => {
           const companyData = product.getAttribute('data-company');
           return companyData && companyData.split(' ').includes(selectedCompany);
         });
       }
-
-      // Exibe ou esconde (mostra ou esconde os produtos)
+  
       allProducts.forEach(product => {
         product.style.display = filteredProducts.includes(product) ? 'flex' : 'none';
       });
-
-      // Destaca produtos e atualiza "benefit-text" e "price-text" conforme o filtro "primo-filter"
+  
       filteredProducts.forEach(product => {
         const primoValues = product.getAttribute('data-primo').split('-');
         const hasPrimoSelected = primoValues.includes(selectedPrimo);
         const benefitSpan = product.querySelector('.benefit-text');
         let benefitText = '';
-        if (selectedPrimo !== 'nao' && hasPrimoSelected) {
-          // Tenta obter a versão específica do benefit para o tipo selecionado
+        if(selectedPrimo !== 'nao' && hasPrimoSelected){
           benefitText = product.getAttribute('data-benefit-' + selectedPrimo) || product.getAttribute('data-benefit') || '';
           product.style.backgroundColor = "#ff6600";
           benefitSpan.textContent = benefitText;
@@ -494,11 +486,10 @@
           benefitSpan.textContent = "";
           benefitSpan.style.display = "none";
         }
-
-        // Exibe o ícone de preço se data-preco estiver preenchido
+  
         const preco = product.getAttribute('data-preco') || '';
         const priceSpan = product.querySelector('.price-text');
-        if (preco) {
+        if(preco){
           priceSpan.textContent = "ⓘ";
           priceSpan.style.display = "block";
           priceSpan.title = preco;
@@ -509,8 +500,7 @@
         }
       });
     }
-
-    // Listeners de mudança
+  
     groupFilter.addEventListener('change', updateProductList);
     priceFilter.addEventListener('change', updateProductList);
     customTrailFilter.addEventListener('change', updateProductList);
@@ -518,8 +508,7 @@
     degreeFilter.addEventListener('change', updateProductList);
     companyFilter.addEventListener('change', updateProductList);
     primoFilter.addEventListener('change', updateProductList);
-
-    // Inicializa a exibição
+  
     updateProductList();
   </script>
 </body>
