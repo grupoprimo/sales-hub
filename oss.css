@@ -116,7 +116,7 @@ header {
 
 main {
     padding: 18px;
-    text-align: center;
+    text-align: left;
 }
 
 /* Grid de produtos: garante espaçamento fixo e responsividade */
