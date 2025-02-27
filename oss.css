@@ -1,4 +1,4 @@
-/* Global Styles */ 
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,36 +9,95 @@ body {
 
 header {
     background-color: #000;
-    color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 30px;
 }
 
-header h1 {
+/* Área de marca (logo e texto) */
+.header-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.header-logo {
+    width: 120px;
+    height: auto;
+    margin-right: 13px;
+}
+
+.header-brand h1 {
     font-size: 20px;
     margin: 0;
 }
 
-main {
-    padding: 18px;
-    text-align: center;
+/* Header links e botão */
+.header-links {
+    display: flex;
+    align-items: center;
 }
 
-/* Seção de Filtros (em linha) */
+.header-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.extra-text a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Botão de alternância: simples, com símbolo ⟲ */
+#toggle-layout {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+    margin-left: 10px;
+}
+
+/* Container principal para filtros e produtos */
+.main-container.layout-horizontal {
+    display: block;
+}
+
+.main-container.layout-vertical {
+    display: flex;
+}
+
+/* Seção de Filtros */
 .filters {
     background-color: #222;
+    border-radius: 5px;
     padding: 20px;
     margin-bottom: 40px;
-    border-radius: 5px;
+}
+
+/* Layout Horizontal: filtros em linha */
+.filters-horizontal {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
     gap: 20px;
     text-align: left;
 }
 
+/* Layout Vertical: filtros em coluna à esquerda */
+.filters-vertical {
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    margin-right: 20px;
+    gap: 15px;
+}
+
+/* Cada item de filtro */
 .filter-item {
     display: flex;
     flex-direction: column;
@@ -47,7 +106,7 @@ main {
 
 .filter-item label,
 .filter-item select {
-    font-size: 14px; /* Ajuste para o tamanho desejado */
+    font-size: 14px;
 }
 
 .filter-item select {
@@ -55,29 +114,36 @@ main {
     color: #000;
 }
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 0 15px;
+main {
+    padding: 18px;
+    text-align: center;
 }
 
-/* Cada caixinha de produto com proporção fixa */
+/* Grid de produtos: garante espaçamento fixo e responsividade */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 228px);
+    justify-content: center;
+    gap: 20px;
+    padding: 0 15px;
+    flex: 1;
+}
+
+/* Cada card de produto (retangular) */
 .product {
     background-color: #fff;
     color: #000;
     border-radius: 5px;
-    text-decoration: none;
     padding: 2px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative; /* para posicionar benefit-text e price-text */
-    width: 228px; /* Define a largura fixa */
-    height: 145px; 
+    position: relative;
+    width: 228px;
+    height: 145px;
 }
 
 .product:hover {
@@ -113,7 +179,7 @@ main {
     position: absolute;
     bottom: 5px;
     right: 5px;
-    background: transparent; /* Sem fundo */
+    background: transparent;
     color: #ff6600;
     font-weight: bold;
     font-size: 15px;
@@ -146,4 +212,54 @@ a {
 header h1 a,
 .header-links a {
     color: white;
+}
+
+/* Responsividade para telas até 1440px */
+@media (max-width: 1440px) {
+    .filters-vertical {
+        width: 250px;
+    }
+    .product {
+        width: 200px;
+        height: 130px;
+    }
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, 200px);
+        gap: 15px;
+        padding: 0 10px;
+    }
+}
+
+/* Responsividade para dispositivos mobile */
+@media (max-width: 768px) {
+    header, .header-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+  
+    .header-links a, .extra-text a, #toggle-layout {
+        font-size: 14px;
+        margin: 5px;
+    }
+  
+    .main-container.layout-vertical {
+        flex-direction: column;
+    }
+  
+    .filters-vertical {
+        width: 100%;
+        margin-right: 0;
+    }
+  
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, 150px);
+        gap: 10px;
+        padding: 0 10px;
+    }
+  
+    .product {
+        width: 150px;
+        height: 100px;
+    }
 }
