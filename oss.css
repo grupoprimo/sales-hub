@@ -125,7 +125,7 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, 228px);
     justify-content: center;
-    gap: 16px 28px;
+    gap: 16px 27px;
     padding: 0 15px;
     flex: 1;
 }
@@ -226,7 +226,7 @@ header h1 a,
     }
     .product-grid {
         grid-template-columns: repeat(auto-fit, 200px);
-        gap: 16px 28px;
+        gap: 16px 27px;
         padding: 0 10px;
     }
 }
