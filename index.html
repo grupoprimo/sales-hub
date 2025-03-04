@@ -23,74 +23,76 @@
 
   <!-- Container principal para filtros e produtos (filtros retraídos por padrão) -->
   <main class="main-container layout-horizontal filters-collapsed">
-    <!-- Seção de Filtros -->
-    <section class="filters filters-horizontal">
-      <!-- Botão de toggle para recolher/reexibir os filtros -->
+    <div class="filters-container">
+      <!-- Botão de toggle fora da área colapsável -->
       <button id="toggle-filters" class="toggle-filters" title="Recolher/Reexibir Filtros">≡</button>
-      <!-- Contêiner interno dos filtros -->
-      <div class="filters-content">
-        <div class="filter-item">
-          <label for="group-filter">Tenho interesse em</label>
-          <select id="group-filter">
-            <option value="all"></option>
-            <option value="aprender">Aprender</option>
-            <option value="investir">Investir</option>
-          </select>
-        </div>
-        <div class="filter-item">
-          <label for="price-filter">Posso pagar por mês até</label>
-          <select id="price-filter">
-            <option value="all"></option>
-            <option value="200">R$ 200</option>
-            <option value="400">R$ 400</option>
-            <option value="1100">R$ 1.100</option>
-          </select>
-        </div>
-        <div class="filter-item">
-          <label for="custom-trail-filter">Quero trilhar minha própria rota</label>
-          <select id="custom-trail-filter">
-            <option value="all"></option>
-            <option value="sim">Sim, gosto de autonomia</option>
-            <option value="nao">Não, prefiro orientação</option>
-          </select>
-        </div>
-        <div class="filter-item">
-          <label for="finance-career-filter">Quero trabalhar no mercado financeiro</label>
-          <select id="finance-career-filter">
-            <option value="all"></option>
-            <option value="sim">Sim</option>
-            <option value="nao">Não</option>
-          </select>
-        </div>
-        <div class="filter-item">
-          <label for="degree-filter">Sou graduado</label>
-          <select id="degree-filter">
-            <option value="all"></option>
-            <option value="sim" selected>Sim</option>
-            <option value="nao">Não</option>
-          </select>
-        </div>
-        <div class="filter-item">
-          <label for="company-filter">Sou empresário</label>
-          <select id="company-filter">
-            <option value="all"></option>
-            <option value="sim">Sim</option>
-            <option value="nao" selected>Não</option>
-          </select>
-        </div>
-        <div class="filter-item">
-          <label for="primo-filter">Sou um Primo</label>
-          <select id="primo-filter">
-            <option value="nao" selected>Não</option>
-            <option value="hub">Aluno Faculdade HUB</option>
-            <option value="vr">Aluno Viver de Renda</option>
-            <option value="vrc">Aluno VR Cripto</option>
-            <option value="vre">Aluno VR Exterior</option>
-            <option value="finclass">Assinante Finclass</option>
-          </select>
-        </div>
-      </div><!-- /.filters-content -->
-    </section>
+      <!-- Seção de Filtros -->
+      <section class="filters filters-horizontal">
+        <!-- Contêiner interno dos filtros -->
+        <div class="filters-content">
+          <div class="filter-item">
+            <label for="group-filter">Tenho interesse em</label>
+            <select id="group-filter">
+              <option value="all"></option>
+              <option value="aprender">Aprender</option>
+              <option value="investir">Investir</option>
+            </select>
+          </div>
+          <div class="filter-item">
+            <label for="price-filter">Posso pagar por mês até</label>
+            <select id="price-filter">
+              <option value="all"></option>
+              <option value="200">R$ 200</option>
+              <option value="400">R$ 400</option>
+              <option value="1100">R$ 1.100</option>
+            </select>
+          </div>
+          <div class="filter-item">
+            <label for="custom-trail-filter">Quero trilhar minha própria rota</label>
+            <select id="custom-trail-filter">
+              <option value="all"></option>
+              <option value="sim">Sim, gosto de autonomia</option>
+              <option value="nao">Não, prefiro orientação</option>
+            </select>
+          </div>
+          <div class="filter-item">
+            <label for="finance-career-filter">Quero trabalhar no mercado financeiro</label>
+            <select id="finance-career-filter">
+              <option value="all"></option>
+              <option value="sim">Sim</option>
+              <option value="nao">Não</option>
+            </select>
+          </div>
+          <div class="filter-item">
+            <label for="degree-filter">Sou graduado</label>
+            <select id="degree-filter">
+              <option value="all"></option>
+              <option value="sim" selected>Sim</option>
+              <option value="nao">Não</option>
+            </select>
+          </div>
+          <div class="filter-item">
+            <label for="company-filter">Sou empresário</label>
+            <select id="company-filter">
+              <option value="all"></option>
+              <option value="sim">Sim</option>
+              <option value="nao" selected>Não</option>
+            </select>
+          </div>
+          <div class="filter-item">
+            <label for="primo-filter">Sou um Primo</label>
+            <select id="primo-filter">
+              <option value="nao" selected>Não</option>
+              <option value="hub">Aluno Faculdade HUB</option>
+              <option value="vr">Aluno Viver de Renda</option>
+              <option value="vrc">Aluno VR Cripto</option>
+              <option value="vre">Aluno VR Exterior</option>
+              <option value="finclass">Assinante Finclass</option>
+            </select>
+          </div>
+        </div><!-- /.filters-content -->
+      </section>
+    </div>
 
     <!-- Lista de produtos -->
     <div class="product-grid" id="product-list">
@@ -512,12 +514,14 @@
 
   <div class="spacer"></div>
   
+  
   <footer>
     <p>&copy; <a href="https://www.grupo-primo.com" target="_blank" rel="noopener noreferrer">Grupo PRIMO, todos os direitos reservados.</a></p>
   </footer>
 
   <!-- Script de Filtragem e Toggling de Layout -->
   <script>
+    // (O código JavaScript permanece o mesmo)
     const groupFilter = document.getElementById('group-filter');
     const priceFilter = document.getElementById('price-filter');
     const customTrailFilter = document.getElementById('custom-trail-filter');
